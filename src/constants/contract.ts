@@ -1,18 +1,18 @@
 import { client } from "@/app/client";
 import { getContract } from "thirdweb";
-import { bleTestnet } from "thirdweb/chains";
+import { baseSepolia } from "thirdweb/chains";
 
-export const contractAddress = "0x9aa08D9081221fAC06916164F5A31A225D7101F3";
-export const tokenAddress = "0x997edF60A68F8fa5fDF313E205690e0DB7EB4Ba9";
+export const contractAddress = "0xDDb66D5d7443Caf865FfD0A724684a358556F8C6";
+export const tokenAddress = "0x9185Cabddc9E9D4847FDAa9B1b3f635038F90b5b";
 
 export const contract = getContract({
     client: client,
-    chain: bleTestnet,
+    chain: baseSepolia,
     address: contractAddress
 });
 
 export const tokenContract = getContract({
     client: client,
-    chain: bleTestnet,
+    chain: baseSepolia,
     address: tokenAddress
 });

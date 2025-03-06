@@ -1,7 +1,7 @@
 import { ConnectButton, lightTheme, useActiveAccount } from "thirdweb/react";
 import { client } from "@/app/client";
-import { bleTestnet } from "thirdweb/chains";
-import { inAppWallet } from "thirdweb/wallets";
+import { baseSepolia } from "thirdweb/chains";
+import { inAppWallet, createWallet } from "thirdweb/wallets";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
@@ -41,6 +41,7 @@ export function Navbar() {
         }
     };
     
+
     return (
         <div className="flex justify-between items-center mb-6">
             <h1 className="text-2xl font-bold">Ethena Prediction Market</h1>
@@ -64,7 +65,7 @@ export function Navbar() {
                 <ConnectButton 
                     client={client} 
                     theme={lightTheme()}
-                    chain={bleTestnet}
+                    chain={baseSepolia}
                     connectButton={{
                         style: {
                             fontSize: '0.75rem !important',
@@ -74,14 +75,15 @@ export function Navbar() {
                     }}
                     detailsButton={{
                         displayBalanceToken: {
-                            [bleTestnet.id]: "0x997edF60A68F8fa5fDF313E205690e0DB7EB4Ba9"
+                            [baseSepolia.id]: "0x9185Cabddc9E9D4847FDAa9B1b3f635038F90b5b"
                         }
                     }}
                     wallets={[
                         inAppWallet(),
+                        createWallet("io.metamask"),
                     ]}
                     accountAbstraction={{
-                        chain: bleTestnet,
+                        chain: baseSepolia,
                         sponsorGas: true,
                     }}
                 />
