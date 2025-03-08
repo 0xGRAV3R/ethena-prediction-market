@@ -26,7 +26,7 @@ export function EnhancedPredictionMarketDashboard() {
                 <Navbar />
                 <div className="mb-4">
                     <img 
-                        src="https://i.ibb.co/tCDrs2V/ethena-banner1.jpg" 
+                        src="ethena-banner1.png" 
                         alt="Placeholder Banner" 
                         className="w-full h-auto rounded-lg" 
                     />
